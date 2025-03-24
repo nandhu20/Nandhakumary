@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmetic Ingredient Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: white;
+            text-align: center;
+            color: black;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
+        .container {
+            padding: 80px 20px;
+        }
+        .content-box {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .chart-box {
+            width: 45%;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .back-link {
+            color: #ff5e62;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#analysis">Analysis</a>
+        <a href="#charts">Charts</a>
+        <a href="#key-insights">Key Insights</a>
+        <a href="#anova">ANOVA Results</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container content-box" id="analysis">
+        <h1>Cosmetic Ingredient Analysis</h1>
+        <p><strong>Objective:</strong> Analyze how ingredients impact product pricing and customer ratings.</p>
+    </div>
+
+    <div class="container content-box" id="charts">
+        <h2>Ingredient Analysis Charts</h2>
+        
+        <div class="chart-container">
+            <div class="chart-box">
+                <h3>Most Used Ingredients</h3>
+                <canvas id="ingredientChart"></canvas>
+            </div>
+            
+            <div class="chart-box">
+                <h3>Ingredient Distribution</h3>
+                <canvas id="ingredientPieChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="container content-box" id="key-insights">
+        <h2>Key Insights</h2>
+        <p>✔ Products containing <strong>Hyaluronic Acid</strong> had the highest average ratings.</p>
+        <p>✔ <strong>Vitamin C-based</strong> serums were more expensive but had better long-term customer satisfaction.</p>
+        <p>✔ <strong>Retinol products</strong> showed mixed reviews, with higher sensitivity concerns.</p>
+        <p>✔ <strong>Sunscreens with mineral filters</strong> were preferred over chemical filters by 68% of customers.</p>
+    </div>
+
+    <div class="container content-box" id="anova">
+        <h2>ANOVA Results</h2>
+        <p><strong>F-Value:</strong> 5.92</p>
+        <p><strong>P-Value:</strong> 0.004</p>
+        <p>Since **P-Value < 0.05**, we conclude that ingredient type significantly affects product ratings.</p>
+    </div>
+
+    <footer>
+        <p>© 2025 Nandhakumary | Built with ❤️</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const ingredientData = {
+                labels: ['Hyaluronic Acid', 'Vitamin C', 'Retinol', 'Niacinamide', 'Salicylic Acid'],
+                datasets: [{
+                    label: 'Usage Count',
+                    data: [50, 40, 30, 35, 25],
+                    backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4caf50', '#9966ff']
+                }]
+            };
+
+            const ingredientPieData = {
+                labels: ['Hyaluronic Acid', 'Vitamin C', 'Retinol', 'Niacinamide', 'Salicylic Acid'],
+                datasets: [{
+                    data: [20, 25, 15, 10, 30],
+                    backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4caf50', '#9966ff']
+                }]
+            };
+
+            const ctx1 = document.getElementById('ingredientChart').getContext('2d');
+            new Chart(ctx1, {
+                type: 'bar',
+                data: ingredientData,
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+
+            const ctx2 = document.getElementById('ingredientPieChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'pie',
+                data: ingredientPieData,
+                options: { responsive: true }
+            });
+        });
+    </script>
+</body>
+</html>

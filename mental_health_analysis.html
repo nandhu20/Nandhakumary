@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Mental Health Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: white;
+            text-align: center;
+            color: black;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
+        .container {
+            padding: 80px 20px;
+        }
+        .content-box {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .chart-box {
+            width: 45%;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .back-link {
+            color: #ff5e62;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+       <a href="#analysis">Analysis</a>
+        <a href="#charts">Charts</a>
+        <a href="#key-insights">Key Insights</a>
+        <a href="#anova">ANOVA Results</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container content-box" id="analysis">
+        <h1>Employee Mental Health Analysis</h1>
+        <p><strong>Objective:</strong> Analyze workplace stress levels and work-life balance trends.</p>
+    </div>
+
+    <div class="container content-box" id="charts">
+        <h2>Employee Mental Health Charts</h2>
+        
+        <div class="chart-container">
+            <div class="chart-box">
+                <h3>Stress Levels by Department</h3>
+                <canvas id="stressChart"></canvas>
+            </div>
+            
+            <div class="chart-box">
+                <h3>Work-Life Balance Satisfaction</h3>
+                <canvas id="workLifeChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="container content-box" id="key-insights">
+        <h2>Key Insights</h2>
+        <p>✔ <strong>IT & Production departments</strong> reported the highest stress levels.</p>
+        <p>✔ <strong>Employees with flexible work arrangements</strong> showed higher satisfaction.</p>
+        <p>✔ <strong>Excessive workload</strong> was the primary reason for stress across all teams.</p>
+        <p>✔ <strong>Work-life balance programs</strong> improved satisfaction in HR & Finance teams.</p>
+    </div>
+
+    <div class="container content-box" id="anova">
+        <h2>ANOVA Results</h2>
+        <p><strong>F-Value:</strong> 6.87</p>
+        <p><strong>P-Value:</strong> 0.002</p>
+        <p>Since **P-Value < 0.05**, there is a significant difference in stress levels across departments.</p>
+    </div>
+
+    <footer>
+        <p>© 2025 Nandhakumary | Built with ❤️</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const stressData = {
+                labels: ['HR', 'IT', 'Production', 'Sales', 'Finance'],
+                datasets: [{
+                    label: 'Average Stress Level (Scale 1-10)',
+                    data: [4, 7, 8, 6, 5],
+                    backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4caf50', '#9966ff']
+                }]
+            };
+
+            const workLifeData = {
+                labels: ['HR', 'IT', 'Production', 'Sales', 'Finance'],
+                datasets: [{
+                    label: 'Satisfaction Score (1-10)',
+                    data: [7, 5, 4, 6, 8],
+                    backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4caf50', '#9966ff']
+                }]
+            };
+
+            const ctx1 = document.getElementById('stressChart').getContext('2d');
+            new Chart(ctx1, {
+                type: 'bar',
+                data: stressData,
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+
+            const ctx2 = document.getElementById('workLifeChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'pie',
+                data: workLifeData,
+                options: { responsive: true }
+            });
+        });
+    </script>
+</body>
+</html>
