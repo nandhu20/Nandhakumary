@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nandhakumary | Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #FFFFFF; 
+            text-align: center;
+            color: #000000;
+            scroll-behavior: smooth;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
+        .container {
+            padding: 80px 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-in-out;
+        }
+        h1, h2 {
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 20px;
+            border: 4px solid white;
+            transition: transform 0.3s;
+        }
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+        .content-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .project-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 40%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+        .project-link {
+            display: inline-block;
+            color: #ffcc00;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#internships">Internships</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container" id="home">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+        <h1>Welcome to My Portfolio</h1>
+        <p>I'm <strong>Nandhakumary</strong>, an MBA Data Analytics student passionate about visualization, analytics, and business intelligence.</p>
+    </div>
+
+    <div class="container content-box" id="about">
+        <h2>About Me</h2>
+        <p>Currently pursuing my MBA in Data Analytics at <strong>Pondicherry University</strong>, I specialize in data visualization, business analytics, and market research.</p>
+        <p><strong>Skills:</strong> Power BI, Python, SQL, SPSS, Advanced Excel</p>
+    </div>
+
+    <div class="container content-box" id="projects">
+        <h2>My Projects</h2>
+        
+        <div class="project-container">
+            <div class="project-card">
+                <h3>Employee Mental Health Analysis</h3>
+                <p>Analyzed employee mental health at Larsen & Toubro Construction to understand stress factors and job satisfaction.</p>
+                <a href="mental_health_analysis.html" class="project-link">View Full Project →</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Cosmetic Ingredient Analysis</h3>
+                <p>Analyzed chemical components in cosmetics using Python to understand product categorization.</p>
+                <a href="cosmetic_analysis.html" class="project-link">View Full Project →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container content-box" id="internships">
+        <h2>Internship Experience</h2>
+        <h3>Larsen & Toubro Construction</h3>
+        <p>Analyzed employees' mental health using statistical methods and created insights for workplace improvements.</p>
+        <h3>MedTourEasy</h3>
+        <p>Performed chemical component analysis in cosmetics, using data science techniques to identify patterns.</p>
+    </div>
+
+    <div class="container content-box" id="contact">
+        <h2>Contact</h2>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/nandhakumary-rajasekarane-338794238/" target="_blank" style="color: #FFFFFF;">My LinkedIn</a></p>
+        <p>Email: rgnky.2001@gmail.com</p>      style="color: #FFFFFF"
+    </div>
+
+    <footer> 
+        <p>© 2025 Nandhakumary | Built with ❤️</p>
+<style> {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 1px 0; 
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px; 
+    height: 20px; 
+    line-height: 20px; 
+}</style>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let sections = document.querySelectorAll(".container");
+            let observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</body>
+</html>
