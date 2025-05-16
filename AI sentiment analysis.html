@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Sentiment Analysis - Smartphone Users</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #111;
+      text-align: center;
+      margin: 0;
+      padding-top: 80px;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #111;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .content-box {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #f5f5f5;
+      padding: 30px;
+      border-radius: 10px;
+    }
+    .chart-box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #ff5e62;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    a.back-link:hover {
+      background: black;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="#overview">Overview</a>
+  <a href="#insights">Insights</a>
+  <a href="#chart">Charts</a>
+  <a href="#report">Report</a>
+</nav>
+
+<div class="content-box" id="overview">
+  <h1>AI Sentiment Analysis on Smartphone Users</h1>
+  <p><strong>Objective:</strong> Understand user expectations and sentiment toward AI features in smartphones.</p>
+  <p><strong>Methodology:</strong> Survey with Likert scale responses and open-ended feedback. Sentiment analysis categorized responses into positive, neutral, and negative.</p>
+</div>
+
+<div class="content-box" id="insights">
+  <h2>Key Insights</h2>
+  <p>✔ Most users under 30 showed positive sentiment toward AI features.</p>
+  <p>✔ Voice assistant and smart camera were the most appreciated AI features.</p>
+  <p>✔ Older users were more concerned about AI privacy and lack of transparency.</p>
+  <p>✔ Sentiment was strongly influenced by duration of smartphone use and digital literacy.</p>
+</div>
+
+<div class="content-box chart-box" id="chart">
+  <h2>Sentiment by Age Group</h2>
+  <canvas id="sentimentChart"></canvas>
+</div>
+
+<div class="content-box" id="report">
+  <h2>Full Project Report</h2>
+  <a href="NK_Report.pdf" class="back-link" target="_blank">📄 View PDF Report</a>
+</div>
+
+<div>
+  <a href="index.html" class="back-link">← Back to Portfolio</a>
+</div>
+
+<script>
+  const ctx = document.getElementById('sentimentChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Under 20', '20-30', '31-40', '40+'],
+      datasets: [
+        {
+          label: 'Positive',
+          data: [15, 35, 20, 10],
+          backgroundColor: '#4caf50'
+        },
+        {
+          label: 'Neutral',
+          data: [10, 20, 25, 30],
+          backgroundColor: '#ffce56'
+        },
+        {
+          label: 'Negative',
+          data: [5, 5, 15, 25],
+          backgroundColor: '#f44336'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
