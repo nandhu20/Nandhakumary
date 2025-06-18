@@ -1,199 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nandhakumary | Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #FFFFFF; 
-            text-align: center;
-            color: #000000;
-            scroll-behavior: smooth;
-        }
-        nav {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 15px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #ffcc00;
-        }
-        .container {
-            padding: 80px 20px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease-in-out;
-        }
-        h1, h2 {
-            font-family: 'Arial Black', sans-serif;
-            text-transform: uppercase;
-        }
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-top: 20px;
-            border: 4px solid white;
-            transition: transform 0.3s;
-        }
-        .profile-img:hover {
-            transform: scale(1.1);
-        }
-        .content-box {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        .project-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .project-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            width: 40%;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .project-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-        }
-        .project-link {
-            display: inline-block;
-            color: #ADD8E6;
-            font-weight: bold;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-        .project-link:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 0px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nandhakumary | Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111;
+      scroll-behavior: smooth;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #222;
+      padding: 15px 0;
+      text-align: center;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ff5e62;
+    }
+    .section {
+      padding: 100px 20px 60px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .card {
+      background: #f5f5f5;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      animation: fadeInUp 1s;
+    }
+    .project-link, .resume-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #ff5e62;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#internships">Internships</a>
-        <a href="#contact">Contact</a>
-    </nav>
 
-    <div class="container" id="home">
-        <img src="profile.jpg" alt="Profile Picture" class="profile-img">
-        <h1>Welcome to My Portfolio</h1>
-        <p>I'm <strong>Nandhakumary</strong>, an MBA Data Analytics student passionate about visualization, analytics, and business intelligence.</p>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#internships">Internships</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div id="home" class="section">
+    <h1 class="animate__animated animate__fadeInDown">Welcome to My Portfolio</h1>
+    <p class="animate__animated animate__fadeInUp">I'm <strong>Nandhakumary</strong>, an MBA Data Analytics student passionate about insights, AI, and visualization.</p>
+  </div>
+
+  <div id="about" class="section card">
+    <h2>About Me</h2>
+    <p>Currently pursuing MBA in Data Analytics at <strong>Pondicherry University</strong>. Skilled in Python, SQL, Power BI, and statistical analysis.</p>
+    <a href="Nandhakumary_Resume.pdf" class="resume-link" target="_blank">📄 Download My Resume</a>
+  </div>
+
+  <div id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Employee Mental Health Analysis</h3>
+      <p>Analyzed mental health and stress factors at L&T using survey data and ANOVA.</p>
+      <a href="mental_health_analysis.html" class="project-link">View Project</a>
     </div>
-
-    <div class="container content-box" id="about">
-        <h2>About Me</h2>
-        <p>Currently pursuing my MBA in Data Analytics at <strong>Pondicherry University</strong>, I specialize in data visualization, business analytics, and market research.</p>
-        <p><strong>Skills:</strong> Power BI, Python, SQL, SPSS, Advanced Excel</p>
+    <div class="card">
+      <h3>Cosmetic Ingredient Analysis</h3>
+      <p>Studied chemical content in cosmetics using Python to identify safety trends and clustering.</p>
+      <a href="cosmetic_analysis.html" class="project-link">View Project</a>
     </div>
-
-    <div class="container content-box" id="projects">
-        <h2>My Projects</h2>
-        
-        <div class="project-container">
-    <div class="project-card">
-        <h3>Employee Mental Health Analysis</h3>
-        <p><em>Analyzing workplace stress, satisfaction, and mental health patterns using survey data and visualization techniques.</em></p>
-        <a href="mental_health_analysis.html" class="project-link">View Full Project →</a>
+    <div class="card">
+      <h3>AI Sentiment Analysis on Smartphone Users</h3>
+      <p>Survey-based analysis of user attitudes towards AI features in smartphones.</p>
+      <a href="ai_sentiment_analysis.html" class="project-link">View Project</a>
     </div>
+  </div>
 
-    <div class="project-card">
-        <h3>Cosmetic Ingredient Analysis</h3>
-        <p><em>Study of chemical ingredients in cosmetics using Python to evaluate product safety, categorization, and user preference.</em></p>
-        <a href="cosmetic_analysis.html" class="project-link">View Full Project →</a>
-    </div>
+  <div id="internships" class="section card">
+    <h2>Internship Experience</h2>
+    <h4>Larsen & Toubro Construction</h4>
+    <p>Analyzed employee mental health patterns using statistical tools.</p>
+    <h4>MedTourEasy</h4>
+    <p>Explored cosmetic ingredient data to uncover category-specific trends.</p>
+    <h4>SmartBridge EdTech</h4>
+    <p>Worked on real-time dashboards using Power BI and Tableau.</p>
+    <h4>Wipro Ltd – Business Analytics Intern</h4>
+    <p>Analyzed Walmart and Superstore sales data to study trends, consumer behavior, and regional performance insights.</p>
+  </div>
 
-    <div class="project-card">
-        <h3>AI Sentiment Analysis on Smartphone Users</h3>
-        <p><em>Survey-based analysis exploring how users perceive, trust, and respond to AI-powered smartphone features.</em></p>
-       <a href="ai_sentiment_analysis.html" class="project-link">View Full Project →</a>
-    </div>
-</div>
+  <div id="contact" class="section card">
+    <h2>Contact</h2>
+    <p>Email: <strong style="color: #ff5e62;">rgnky.2001@gmail.com</strong></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/nandhakumary-rajasekarane-338794238/" target="_blank">Visit Profile</a></p>
+  </div>
 
-        </div>
-    </div>
-<div class="container content-box" id="internships">
-  <h2>Internship Experience</h2>
+  <footer>
+    <p>© 2025 Nandhakumary | Built with ❤️</p>
+  </footer>
 
-  <h3>Larsen & Toubro Construction - Finance & Admin Intern</h3>
-  <p>Analyzed employees' mental health using statistical methods and created insights for workplace improvements.</p>
-
-  <h3>MedTourEasy - Data Analyst Intern</h3>
-  <p>Performed chemical component analysis in cosmetics, using data science techniques to identify patterns.</p>
-
-  <h3>Wipro Ltd – Business Analytics Intern</h3>
-  <p>Conducted detailed analysis on Walmart and Superstore sales data to identify <strong>sales patterns</strong>, <strong>customer behavior</strong>, and <strong>regional performance trends</strong>. Delivered insights through visualizations using Excel and Power BI.</p>
-</div>
-
-
-    <div class="container content-box" id="contact">
-        <h2>Contact</h2>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/nandhakumary-rajasekarane-338794238/" target="_blank" style="color: #FFFFFF;">My LinkedIn</a></p>
-        <p>Email: <a href="mailto:rgnky.2001@gmail.com" style="color: #FFD700;">rgnky.2001@gmail.com</a></p>
-    </div>
-
-    <footer> 
-        <p>© 2025 Nandhakumary | Built with ❤️</p>
-<style> {
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 1px 0; 
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-size: 12px; 
-    height: 20px; 
-    line-height: 20px; 
-}</style>
-    </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let sections = document.querySelectorAll(".container");
-            let observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = "1";
-                        entry.target.style.transform = "translateY(0)";
-                    }
-                });
-            }, { threshold: 0.1 });
-            sections.forEach(section => observer.observe(section));
-        });
-    </script>
 </body>
 </html>
